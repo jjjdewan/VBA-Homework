@@ -158,15 +158,16 @@ End Sub
 
 ' Clear worksheet  for the Easy Solution
 '
-Sub ClearEasy()
+Sub CleanupEasy()
     Columns("I:J").ClearContents
     Columns("I:J").ClearFormats
     Columns("I:J").UseStandardWidth = True
 End Sub
 
-' clear all the worksheets under test
+' Cleanup all the worksheets under test
 '
-Sub ClearEasyChallenge()
+Sub CleanupEasyChallenge()
+    ' Cleanup result data for all Worksheet: traverse through all the sheets one by one
     For Each ws In Worksheets
         ws.Columns("I:J").ClearContents
         ws.Columns("I:J").ClearFormats
